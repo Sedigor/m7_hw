@@ -105,8 +105,8 @@ def archive_to_folder(folder_path):
             os.remove(file_path)
                 
 
-if __name__ == "__main__":
-    main_path = get_folder_path()
+def main():
+    main_path = " ".join(sys.argv[1:])
     create_folders(main_path, extensions)
     sort_files(main_path, extensions)
     rename_files_and_folders(main_path)
