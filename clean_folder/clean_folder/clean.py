@@ -66,7 +66,7 @@ def sort_files(folder_path, f_extensions):
             for i in range(len(dest_folders)):
                 if f_extension[1:].upper() in ext_check[i]:
                     try:
-                        shutil.move(file_path, f"{main_path}\\{dest_folders[i]}")
+                        shutil.move(file_path, f"{folder_path}\\{dest_folders[i]}")
                     except:
                         os.remove(file_path)
         else:
@@ -106,7 +106,7 @@ def archive_to_folder(folder_path):
                 
 
 def main():
-    main_path = " ".join(sys.argv[1:])
+    main_path = get_folder_path()
     create_folders(main_path, extensions)
     sort_files(main_path, extensions)
     rename_files_and_folders(main_path)
